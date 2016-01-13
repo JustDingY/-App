@@ -1,0 +1,48 @@
+//
+//  PrefixHeader.pch
+//  民之梦App
+//
+//  Created by 韩少龙 on 15/11/16.
+//  Copyright © 2015年 韩少龙. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#ifdef __OBJC__
+
+#import "UIView+MZMExtension.h"
+#import "UIBarButtonItem+Extesion.h"
+#import "MZMControl.h"
+#import "UIImageView+WebCache.h"
+#import "MZMHttpDownload.h"
+#endif
+
+#ifdef DEBUG // 处于开发阶段
+#define MZMLog(...) NSLog(__VA_ARGS__)
+#else // 处于发布阶段
+#define MZMLog(...)
+#endif
+
+#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define MZMCOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+#define MZMColor [UIColor colorWithRed:195/255.0 green:39/255.0 blue:43/255.0 alpha:1]
+#define MZMBackColor [UIColor colorWithRed:248/255.0 green:248/255.0 blue:248/255.0 alpha:1]
+
+
+#define IOS8 [[UIDevice currentDevice].systemVersion floatValue] > 8.0
+
+//更多
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kItem_Height 60
+#define kItem_Number 4
+#define kDetail_Item_Number 4
+
+
+#endif /* PrefixHeader_pch */
